@@ -1,0 +1,152 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Yomogi', cursive;
+}
+
+
+body {
+    display: flex;
+    justify-content:center;
+    height:100vh;
+    background: linear-gradient(125deg,#FC354C 50%,#0ABFBC 50%) no-repeat;
+}
+
+
+.container{
+    border: 2px solid #fffa;
+    margin: 82px;
+    
+    padding:10px;
+    border-radius: 25px;
+    background:rgba(255,255,255,0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 8px 8px 20px rgba(0,0,0,0.3),
+                inset 8px 8px 20px rgba(0,0,0,0.3),
+                inset -8px -8px 20px rgba(255,255,255,0.3)    ;
+}
+
+
+.title{
+    text-align: center;    
+}
+
+.status-bar{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+.reset{
+    cursor: pointer;
+    border: 2px solid #3da3df;
+    padding: 10px 20px;
+    border-radius:25px;
+    width:200px;
+    text-align: center;
+    background: linear-gradient(to right,#44f76b,#62defe);
+    transition: all 0.6s ease;    
+}
+
+.reset:hover {
+    text-shadow: 0px 0px 5px black;
+    background: linear-gradient(to left,#44f76b,#62defe);
+    color: #bcedf9;
+    border: 2px solid #31ef7e;
+}
+
+
+
+.status{
+    border: 2px solid #3da3df;
+    padding: 10px 20px;
+    background: linear-gradient(to right,#3D7EAA,#FFE47A);
+    border-radius:25px;
+    width:200px;
+    text-align: center;
+}
+
+.status span{
+    color: #bcedf9;
+}
+
+
+.game-grid{
+    
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-gap: 7px;
+    margin-top: 10px;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.cell{
+    height:150px;
+    width:150px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:RGB(223, 207, 190);
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid #5f5c599d;
+}
+
+.x::after{
+    content:'×';
+    font-size: 100px;
+}
+
+.o::after{
+    content:'○';
+    color:#bcedf9;
+    font-size: 100px;
+}
+.x,.o{
+    cursor:default;
+}
+
+.won::after{
+    color:#FC354C;
+}
+
+h1 span{
+    color:#bcedf9;
+}
+
+
+@media(max-width: 768px){
+    .cell{
+        height:70px;
+        width: 70px;
+    }
+    .game-grid{
+        padding-bottom: 15px;
+        grid-gap: 3px;
+    }
+    .x::after,.o::after{
+        font-size:35px;
+    }
+    .status,.reset{
+        width:70px;
+    }
+
+    .status-bar{
+        margin-top:15px;
+        font-size:10px;
+    }
+    .container{
+        padding:5px;
+        height:fit-content;
+        margin: 50px;
+    }
+}
