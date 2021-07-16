@@ -150,3 +150,18 @@ h1 span{
         margin: 50px;
     }
 }
+
+@media only screen and (max-width: 1024px){
+    .game-grid{
+        padding-bottom: 20px;
+    }
+
+    .cell{
+        height: 130px;
+        width : 130px;
+    }
+
+    .status,.reset{
+        width: 120px;
+    }    
+}
